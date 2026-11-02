@@ -4,7 +4,7 @@
 
 **Plushify** is a Minecraft resource pack that transforms the Totem of Undying into a cute, plushie-inspired version of your own Minecraft skin.
 
-Turn your skin into a tiny Totem buddy that looks just like you!
+Turn your Minecraft skin into a tiny Totem buddy that looks just like you!
 
 ## Download
 
@@ -14,13 +14,13 @@ Get Plushify on Modrinth:
 
 ## Versions
 
-- **Latest:** V1.0.3
-- Previous: V1.0.2
+- **Latest Version:** V1.0.3
+- **Previous Version:** V1.0.2
 
 ## Features
 
 - Customizable with your own Minecraft skin
-- Plushie-inspired Totem design
+- Cute, plushie-inspired Totem design
 - Easy to install and use
 - No additional mods required
 
@@ -30,13 +30,13 @@ Want your own custom Plushy Totem?
 
 1. Download the resource pack.
 2. Extract the ZIP file.
-3. Follow the instructions in `Tutorial-ReadME.txt`.
-4. Add your own Minecraft skin.
+3. Open `Tutorial-ReadME.txt`.
+4. Follow the instructions to add your own Minecraft skin.
 5. Enjoy your custom Plushy Totem!
 
 ## Source Code
 
-This repository contains the source files for Plushify.
+This repository contains the source files for **Plushify**.
 
 Feel free to explore the project!
 
@@ -49,3 +49,5 @@ Feel free to explore the project!
 ---
 
 **Plushify** · Made by N3TU
+
+<sub>Copyright © 2026 N3TU. All Rights Reserved.</sub>
