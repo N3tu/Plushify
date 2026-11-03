@@ -1,6 +1,55 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "minecraft:item/plushy"
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "minecraft:custom_name",
+    "cases": [
+      {
+        "when": "Iron",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/plushify_iron"
+        }
+      },
+      {
+        "when": "Netherite",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/plushify_netherite"
+        }
+      },
+      {
+        "when": "Diamond",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/plushify_diamond"
+        }
+      },
+      {
+        "when": "Gold",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/plushify_gold"
+        }
+      },
+      {
+        "when": "Copper",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/plushify_copper"
+        }
+      },
+      {
+        "when": "Chain",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/plushify_chain"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/plushify"
+    }
   }
 }
