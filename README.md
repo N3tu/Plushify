@@ -14,15 +14,23 @@ Get Plushify on Modrinth:
 
 ## Versions
 
-- **Latest Version:** V1.0.3
-- **Previous Version:** V1.0.2
+- **Latest Version:** V1.0 (Release)
+- **Previous Version:** V1.0.3 (Beta)
 
 ## Features
 
 - Customizable with your own Minecraft skin
 - Cute, plushie-inspired Totem design
+- Custom armor models for different materials
+- Rename your Totem to `Iron`, `Gold`, `Diamond`, `Netherite`, `Copper` or `Chain` to unlock unique armor appearances
 - Easy to install and use
 - No additional mods required
+
+## What's New
+
+- **New name:** N3TU's Custom Plushy Totems has been renamed to **Plushify**.
+- **Custom Armor:** Added unique armor designs for Iron, Gold, Diamond, Netherite, Copper and Chain.
+- **Model Fix:** Fixed a small issue where parts of the normal model were overlapping or clipping into each other.
 
 ## Tutorial
 
