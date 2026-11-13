@@ -1,6 +1,7 @@
 ![Plushify Banner](https://github.com/user-attachments/assets/4db396f0-9615-4d13-8b73-2f9fb3e78911)
 
-# Plushify
+# Plushify (archived)
+
 
 **Plushify** is a Minecraft resource pack that transforms the Totem of Undying into a cute, plushie-inspired version of your own Minecraft skin.
 
