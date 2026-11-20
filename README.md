@@ -1,62 +1,41 @@
-![Plushify Banner](https://github.com/user-attachments/assets/4db396f0-9615-4d13-8b73-2f9fb3e78911)
+![Plushify banner](https://github.com/user-attachments/assets/4db396f0-9615-4d13-8b73-2f9fb3e78911)
 
-# Plushify (archived)
+# Plushify
 
+Plushify turns your Minecraft skin into a plush version of the Totem of Undying. Preview your Totem in the browser and export a ready-to-install resource pack for Minecraft Java Edition.
 
-**Plushify** is a Minecraft resource pack that transforms the Totem of Undying into a cute, plushie-inspired version of your own Minecraft skin.
-
-Turn your Minecraft skin into a tiny Totem buddy that looks just like you!
-
-## Download
-
-Get Plushify on Modrinth:
-
-[**Download Plushify**](https://modrinth.com/resourcepack/n3tus-custom-plushy-totems)
-
-## Versions
-
-- **Latest Version:** V1.0 (Release)
-- **Previous Version:** V1.0.3 (Beta)
+**[Open the Plushify Creator](https://n3tu.github.io/Plushify/)** · [Download on Modrinth](https://modrinth.com/resourcepack/plushify)
 
 ## Features
 
-- Customizable with your own Minecraft skin
-- Cute, plushie-inspired Totem design
-- Custom armor models for different materials
-- Rename your Totem to `Iron`, `Gold`, `Diamond`, `Netherite`, `Copper` or `Chain` to unlock unique armor appearances
-- Easy to install and use
-- No additional mods required
+- Rotate and zoom your Totem in an interactive 3D preview with selectable backgrounds.
+- Upload Classic or Slim 64 × 64 PNG skins by drag and drop. The creator also converts legacy 64 × 32 skins.
+- Preview six armor styles and save a transparent PNG of your Totem.
+- Export a resource pack ZIP with your skin, the matching textures and models, and the Plushify sound effects.
 
-## What's New
+## Create your Totem
 
-- **New name:** N3TU's Custom Plushy Totems has been renamed to **Plushify**.
-- **Custom Armor:** Added unique armor designs for Iron, Gold, Diamond, Netherite, Copper and Chain.
-- **Model Fix:** Fixed a small issue where parts of the normal model were overlapping or clipping into each other.
+1. Open the creator and upload your skin PNG. For a 64 × 64 skin, choose the matching arm layout.
+2. Select **Download My Plushy** to build the pack.
+3. In Minecraft Java Edition, go to **Options → Resource Packs → Open Pack Folder**.
+4. Place the ZIP in that folder and activate the pack in Minecraft.
 
-## Tutorial
+## Equip armor
 
-Want your own custom Plushy Totem?
+Every exported pack includes six armor styles. At an anvil, rename your Totem to `Iron`, `Gold`, `Diamond`, `Netherite`, `Copper` or `Chain`. Keep the Totem's original name for the default appearance.
 
-1. Download the resource pack.
-2. Extract the ZIP file.
-3. Open `Tutorial-ReadME.txt`.
-4. Follow the instructions to add your own Minecraft skin.
-5. Enjoy your custom Plushy Totem!
+## Compatibility and privacy
 
-## Source Code
+Plushify works with vanilla Minecraft Java Edition. The V1.0 release covers versions 26.1–26.3 and selected 26.4 snapshots. [See the Modrinth version list](https://modrinth.com/resourcepack/plushify/versions).
 
-This repository contains the source files for **Plushify**.
+The creator processes your skin and builds the ZIP locally in your browser.
 
-Feel free to explore the project!
+## Repository
 
-## Links
-
-- **Modrinth:** [Plushify](https://modrinth.com/resourcepack/n3tus-custom-plushy-totems)
-- **GitHub:** [Source Code](https://github.com/N3tu/plushify)
-- **TikTok:** [@n3tu._](https://www.tiktok.com/@n3tu._)
+The root JSON files define the resource pack's models, item behavior and sounds. The [`docs/` directory](https://github.com/N3tu/Plushify/tree/main/docs) contains the published creator. For manual skin replacement, see the [resource pack tutorial](Tutorial-ReadME.txt).
 
 ---
 
-**Plushify** · Made by N3TU
+Created by **N3TU** · [TikTok](https://www.tiktok.com/@n3tu._)
 
-<sub>Copyright © 2026 N3TU. All Rights Reserved.</sub>
+<sub>Copyright © 2026 N3TU. All rights reserved.</sub>
