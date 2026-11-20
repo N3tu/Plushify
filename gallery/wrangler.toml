@@ -1,0 +1,18 @@
+name = "plushify-gallery"
+main = "worker.mjs"
+compatibility_date = "2026-11-20"
+workers_dev = true
+preview_urls = false
+
+[vars]
+CREATOR_ORIGIN = "https://n3tu.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "plushify-skins"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[[ratelimits]]
+name = "UPLOADS"
+namespace_id = "6937201"
+simple = { limit = 6, period = 60 }

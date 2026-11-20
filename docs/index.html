@@ -7,10 +7,11 @@
     <meta name="description" content="Turn your Minecraft skin into a custom Totem of Undying. Preview your Plushy in 3D and download a Minecraft Java resource pack.">
     <link rel="icon" href="/Plushify/art/plushify-icon.png" type="image/png" sizes="32x32">
     <title>Plushify Creator — Your Skin. Your Plushy.</title>
-    <script type="module" crossorigin src="/Plushify/assets/index-DMN1rDh0.js"></script>
-    <link rel="modulepreload" crossorigin href="/Plushify/assets/navigation-Bbk9_KBv.js">
+    <script type="module" crossorigin src="/Plushify/assets/index-By0cw70W.js"></script>
+    <link rel="modulepreload" crossorigin href="/Plushify/assets/navigation-DThHB9XZ.js">
     <link rel="modulepreload" crossorigin href="/Plushify/assets/three-core-BwcFwJuc.js">
-    <link rel="stylesheet" crossorigin href="/Plushify/assets/navigation-kyX7wIk8.css">
+    <link rel="modulepreload" crossorigin href="/Plushify/assets/gallery-api-L9uO-2DT.js">
+    <link rel="stylesheet" crossorigin href="/Plushify/assets/navigation-nCN_6h8o.css">
   </head>
   <body>
     <a class="skip" href="#creator">Skip to creator</a>
@@ -18,7 +19,7 @@
       <div class="frame header-inner">
         <a class="wordmark" href="/Plushify/"><img src="/Plushify/art/plushify-icon.png" alt="" width="32" height="32"> Plushify</a>
         <div class="header-links">
-          <a href="#how-it-works">How it works</a>
+          <a href="/Plushify/gallery.html">Skin gallery</a>
           <button class="tool-button menu-toggle" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="side-menu"><span class="menu-icon" aria-hidden="true"></span> Menu</button>
         </div>
       </div>
@@ -115,6 +116,11 @@
               </select>
             </div>
             <p id="upload-error" class="feedback error" role="alert" hidden></p>
+            <div class="sharing-note" id="sharing">
+              <a class="privacy" href="/Plushify/privacy.html"><span class="icon i-lock" aria-hidden="true"></span> <span id="sharing-state">New uploads are private</span></a>
+              <button class="text-button" id="sharing-settings" type="button" aria-haspopup="dialog" hidden>Sharing settings</button>
+            </div>
+            <p id="gallery-status" class="feedback" role="status" hidden></p>
           </section>
 
           <details class="panel armor-panel" id="armor-panel">
@@ -147,10 +153,6 @@
               <button class="tool-button action-button" id="modrinth-help" type="button" aria-haspopup="dialog">Modrinth guide</button>
             </div>
             <p id="export-status" class="feedback" role="status" hidden></p>
-            <div class="export-note">
-              <a class="privacy" href="/Plushify/privacy.html"><span class="icon i-lock" aria-hidden="true"></span> Processed locally</a>
-              <button class="text-button" id="share-skin" type="button" aria-haspopup="dialog" hidden>Share on GitHub</button>
-            </div>
           </section>
         </div>
       </div>
@@ -178,25 +180,20 @@
       </form>
     </dialog>
 
-    <dialog class="install-guide" id="share-guide" aria-labelledby="share-title">
-      <h2 id="share-title">Share a skin publicly</h2>
-      <p>Anyone can view and download accepted skins. Share only a skin you have permission to publish.</p>
-      <ol>
-        <li>Save your skin PNG below.</li>
-        <li>Open the gallery on GitHub and fork the repository.</li>
-        <li>Upload your PNG to <strong>skins/</strong> in your fork, then open a pull request to Plushify.</li>
-      </ol>
-      <div class="dialog-actions">
-        <button class="tool-button action-button" type="button" id="save-skin">Save skin PNG</button>
-        <a class="tool-button action-button" href="https://github.com/N3tu/Plushify/tree/main/skins">Open GitHub gallery</a>
-        <form method="dialog"><button class="tool-button action-button" type="submit" autofocus>Close</button></form>
-      </div>
+    <dialog class="install-guide" id="sharing-dialog" aria-labelledby="sharing-title" aria-describedby="sharing-notice">
+      <h2 id="sharing-title">Share your skins?</h2>
+      <p id="sharing-notice">If you allow public sharing, new skins you upload automatically appear in the <strong>public skin gallery</strong>. Anyone can download them. Only share skins you have permission to publish.</p>
+      <p>You can change your choice for future uploads in Sharing settings. See the <a class="text-button" href="/Plushify/privacy.html">privacy notice</a>.</p>
+      <form method="dialog" class="sharing-actions">
+        <button class="tool-button action-button" type="submit" value="private" autofocus>Keep my skins private</button>
+        <button class="download-button" type="submit" value="public">Allow public sharing</button>
+      </form>
     </dialog>
 
     <footer class="site-footer">
       <div class="frame footer-inner">
         <span>Plushify by N3TU</span>
-        <div><a href="/Plushify/privacy.html">Privacy</a><a href="/Plushify/license.html">Copyright &amp; license</a><a href="https://github.com/N3tu/Plushify/tree/main/skins">Skin gallery</a></div>
+        <div><a href="/Plushify/privacy.html">Privacy</a><a href="/Plushify/license.html">Copyright &amp; license</a><a href="/Plushify/gallery.html">Skin gallery</a></div>
       </div>
     </footer>
   </body>

@@ -28,11 +28,13 @@ Every exported pack includes six armor styles. At an anvil, rename your Totem to
 
 Plushify works with vanilla Minecraft Java Edition. The V1.0 release covers versions 26.1–26.3 and selected 26.4 snapshots. [See the Modrinth version list](https://modrinth.com/resourcepack/plushify/versions).
 
-The creator processes your skin and builds the ZIP locally in your browser. If you choose to share a skin, you can propose it for the public [skin gallery](skins/) using a GitHub pull request. [Privacy details](https://n3tu.github.io/Plushify/privacy.html)
+The creator previews skins and builds ZIP files in your browser. If you turn on public sharing, future uploads are automatically available in the [skin gallery](https://n3tu.github.io/Plushify/gallery.html). [Privacy details](https://n3tu.github.io/Plushify/privacy.html)
 
 ## Repository
 
 The root JSON files define the resource pack's models, item behavior and sounds. The [`docs/` directory](https://github.com/N3tu/Plushify/tree/main/docs) contains the published creator. For manual skin replacement, see the [resource pack tutorial](Tutorial-ReadME.txt).
+
+The [gallery service](gallery/) handles public PNG storage and downloads.
 
 ## Copyright and license
 
