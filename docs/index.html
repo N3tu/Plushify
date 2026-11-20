@@ -3,119 +3,55 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#100e18">
+    <meta name="theme-color" content="#1c1b19">
     <meta name="description" content="Turn your Minecraft skin into a custom Totem of Undying. Preview your Plushy in 3D and download a Minecraft Java resource pack.">
     <link rel="icon" href="/Plushify/art/plushify-icon.png" type="image/png" sizes="32x32">
     <title>Plushify Creator — Your Skin. Your Plushy.</title>
-    <script type="module" crossorigin src="/Plushify/assets/index-BJ4BEYsZ.js"></script>
+    <script type="module" crossorigin src="/Plushify/assets/index-DMN1rDh0.js"></script>
+    <link rel="modulepreload" crossorigin href="/Plushify/assets/navigation-Bbk9_KBv.js">
     <link rel="modulepreload" crossorigin href="/Plushify/assets/three-core-BwcFwJuc.js">
-    <link rel="stylesheet" crossorigin href="/Plushify/assets/index-DhONpYTA.css">
+    <link rel="stylesheet" crossorigin href="/Plushify/assets/navigation-kyX7wIk8.css">
   </head>
   <body>
     <a class="skip" href="#creator">Skip to creator</a>
     <header class="site-header">
       <div class="frame header-inner">
-        <a class="wordmark" href="#top" aria-label="Plushify home">
-          <img src="/Plushify/art/plushify-logo.png" alt="" width="2021" height="683">
-        </a>
-        <nav aria-label="Main navigation">
-          <a class="nav-current" href="#creator">Creator</a>
+        <a class="wordmark" href="/Plushify/"><img src="/Plushify/art/plushify-icon.png" alt="" width="32" height="32"> Plushify</a>
+        <div class="header-links">
           <a href="#how-it-works">How it works</a>
-          <a href="https://github.com/N3tu/Plushify">GitHub <span class="icon i-link" aria-hidden="true"></span></a>
-          <a href="https://modrinth.com/resourcepack/plushify">Modrinth <span class="icon i-link" aria-hidden="true"></span></a>
-        </nav>
+          <button class="tool-button menu-toggle" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="side-menu"><span class="menu-icon" aria-hidden="true"></span> Menu</button>
+        </div>
       </div>
     </header>
 
     <main class="frame" id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div>
-          <p class="eyebrow"><span class="icon i-cube" aria-hidden="true"></span> TOTEM CREATOR</p>
-          <h1 id="hero-title">Your Skin. <span>Your Plushy.</span></h1>
-          <p class="hero-description">Turn your Minecraft skin into your very own adorable Totem of Undying.</p>
-          <a class="mobile-upload" href="#upload-section">Upload Your Skin</a>
+        <h1 id="hero-title">Your skin.<br><span>Your Plushy.</span></h1>
+        <div class="hero-copy">
+          <p>Turn your Minecraft skin into your own Totem of Undying.</p>
+          <p class="edition"><span class="icon i-cube" aria-hidden="true"></span> Minecraft Java Edition · 26.1–26.4</p>
         </div>
-        <div class="compatibility"><span>MINECRAFT JAVA EDITION</span><strong>26.1–26.4</strong></div>
       </section>
 
       <div class="creator" id="creator">
-        <div class="settings">
-          <section class="panel upload-panel" id="upload-section" aria-labelledby="skin-title">
-            <h2 id="skin-title">Your skin</h2>
-            <div class="drop-zone" id="drop-zone">
-              <input type="file" id="skin-file" accept=".png,image/png" aria-label="Upload Your Skin" aria-describedby="upload-hint" disabled>
-              <label for="skin-file">
-                <span class="upload-icon"><span class="icon i-upload" aria-hidden="true"></span></span>
-                <strong id="upload-label">Upload Your Skin</strong>
-                <span id="upload-hint">Drop a PNG here · 64 × 64 or 64 × 32</span>
-              </label>
-            </div>
-            <div class="skin-meta">
-              <canvas id="avatar" width="8" height="8" aria-hidden="true"></canvas>
-              <div class="skin-text">
-                <strong id="skin-name">Amethyst</strong>
-                <span id="skin-description">64 × 64 PNG · Slim</span>
-              </div>
-              <span id="skin-status" class="demo-label">DEMO SKIN</span>
-            </div>
-            <div id="arm-option" class="inline-setting" hidden>
-              <label for="arm-type">Arm layout</label>
-              <select id="arm-type">
-                <option value="auto" id="arm-auto">Auto</option>
-                <option value="classic">Classic (4 px)</option>
-                <option value="slim">Slim (3 px)</option>
-              </select>
-            </div>
-            <p id="upload-error" class="feedback error" role="alert" hidden></p>
-          </section>
-
-          <section class="panel armor-panel" aria-labelledby="armor-title">
-            <h2 id="armor-title">Armor</h2>
-            <fieldset id="armor-options" class="armor-options" disabled>
-              <legend class="sr-only">Armor variant</legend>
-              <label><input type="radio" name="armor" value="Default" checked><span><img src="/Plushify/art/default.png" alt="">Default</span></label>
-              <label><input type="radio" name="armor" value="Iron"><span><img src="/Plushify/art/iron.png" alt="">Iron</span></label>
-              <label><input type="radio" name="armor" value="Gold"><span><img src="/Plushify/art/gold.png" alt="">Gold</span></label>
-              <label><input type="radio" name="armor" value="Diamond"><span><img src="/Plushify/art/diamond.png" alt="">Diamond</span></label>
-              <label><input type="radio" name="armor" value="Netherite"><span><img src="/Plushify/art/netherite.png" alt="">Netherite</span></label>
-              <label><input type="radio" name="armor" value="Copper"><span><img src="/Plushify/art/copper.png" alt="">Copper</span></label>
-              <label><input type="radio" name="armor" value="Chain"><span><img src="/Plushify/art/chain.png" alt="">Chain</span></label>
-            </fieldset>
-            <p class="armor-hint" id="armor-hint">All six armor styles are included in your pack.</p>
-          </section>
-
-          <section class="export-panel" aria-label="Resource pack download">
-            <div class="export-actions">
-              <button class="download-button" id="download" type="button" disabled>
-                <span class="icon i-download" aria-hidden="true"></span><span id="download-label">Download My Plushy</span>
-              </button>
-              <button class="tool-button modrinth-button" id="modrinth-help" type="button" aria-haspopup="dialog">Modrinth guide</button>
-            </div>
-            <p class="privacy"><span class="icon i-lock" aria-hidden="true"></span> Your skin stays in your browser. No uploads to external servers.</p>
-            <p id="export-status" class="feedback" role="status" hidden></p>
-          </section>
-        </div>
-
         <section class="preview panel" id="preview" aria-label="Live 3D preview">
           <div class="preview-header">
-            <h2><span class="icon i-cube" aria-hidden="true"></span> 3D Preview</h2>
+            <h2>3D preview</h2>
             <label class="background-picker">
               <span class="icon i-image" aria-hidden="true"></span>
               <span class="sr-only">Preview background</span>
               <select id="background">
-                <option value="studio">Dark Studio</option>
-                <option value="grass">Minecraft Grass</option>
-                <option value="nether">Nether Inspired</option>
+                <option value="overworld">Overworld</option>
+                <option value="nether">Nether</option>
+                <option value="end">End</option>
                 <option value="transparent">Transparent</option>
               </select>
               <span class="icon i-chevron" aria-hidden="true"></span>
             </label>
           </div>
 
-          <div class="stage" id="stage" data-background="studio" aria-busy="true">
-            <div class="stage-grid" aria-hidden="true"></div>
-            <div class="stage-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-            <div class="stage-caption"><span aria-hidden="true"></span><span id="variant-caption">DEFAULT</span></div>
+          <div class="stage" id="stage" data-background="overworld" aria-busy="true">
+            <div class="stage-caption" id="variant-caption">DEFAULT</div>
             <canvas id="model" tabindex="0" aria-label="Interactive Plushy model" aria-describedby="preview-help"></canvas>
             <div class="stage-message" id="stage-message" role="status">
               <img src="/Plushify/art/plushify-icon.png" width="32" height="32" alt="">
@@ -129,29 +65,102 @@
           </div>
 
           <div class="preview-toolbar" id="preview-toolbar" role="group" aria-label="Preview controls">
+            <div class="preview-actions">
+              <button type="button" class="tool-button action-button" id="spin" aria-pressed="true" disabled><span class="icon i-orbit" aria-hidden="true"></span> Auto-rotate</button>
+              <button type="button" class="tool-button action-button" id="screenshot" disabled><span class="icon i-camera" aria-hidden="true"></span> Save preview</button>
+            </div>
             <div class="zoom-tool" role="group" aria-label="Zoom controls">
               <button type="button" class="tool-button icon-button" id="zoom-out" aria-label="Zoom out" title="Zoom out" disabled><span class="icon i-minus" aria-hidden="true"></span></button>
               <input id="zoom" type="range" min="65" max="210" value="100" aria-label="Zoom" disabled>
               <button type="button" class="tool-button icon-button" id="zoom-in" aria-label="Zoom in" title="Zoom in" disabled><span class="icon i-plus" aria-hidden="true"></span></button>
             </div>
             <div class="view-tools" role="group" aria-label="Camera">
-              <button type="button" class="tool-button icon-button" id="reset" aria-label="Reset preview" title="Reset preview" disabled><span class="icon i-rotate" aria-hidden="true"></span></button>
               <button type="button" class="tool-button icon-button" id="flip" aria-label="Show back" title="Show back" disabled><span class="icon i-flip" aria-hidden="true"></span></button>
-            </div>
-            <div class="preview-actions">
-              <button type="button" class="tool-button action-button" id="spin" aria-pressed="false" disabled><span class="icon i-orbit" aria-hidden="true"></span> Auto-rotate</button>
-              <button type="button" class="tool-button action-button" id="screenshot" disabled><span class="icon i-camera" aria-hidden="true"></span> Save Preview</button>
+              <button type="button" class="tool-button icon-button" id="reset" aria-label="Reset preview" title="Reset preview" disabled><span class="icon i-rotate" aria-hidden="true"></span></button>
             </div>
           </div>
         </section>
+
+        <div class="settings">
+          <section class="panel upload-panel" id="upload-section" aria-labelledby="skin-title">
+            <h2 id="skin-title">Your skin</h2>
+            <div class="skin-meta">
+              <canvas id="avatar" width="8" height="8" aria-hidden="true"></canvas>
+              <div class="skin-text">
+                <strong id="skin-name">askin</strong>
+                <span id="skin-description">64 × 64 PNG · Classic</span>
+              </div>
+              <span id="skin-status" class="demo-label">Demo</span>
+            </div>
+            <div id="demo-option" class="inline-setting">
+              <label for="demo-layout">Demo arms</label>
+              <select id="demo-layout" disabled>
+                <option value="classic">Classic (4 px)</option>
+                <option value="slim">Slim (3 px)</option>
+              </select>
+            </div>
+            <div class="drop-zone" id="drop-zone">
+              <input type="file" id="skin-file" accept=".png,image/png" aria-label="Upload Your Skin" aria-describedby="upload-hint" disabled>
+              <label for="skin-file">
+                <span class="upload-icon"><span class="icon i-upload" aria-hidden="true"></span></span>
+                <span><strong id="upload-label">Upload Your Skin</strong><small id="upload-hint">Drop a 64 × 64 or 64 × 32 PNG</small></span>
+              </label>
+            </div>
+            <div id="arm-option" class="inline-setting" hidden>
+              <label for="arm-type">Arm layout</label>
+              <select id="arm-type">
+                <option value="auto" id="arm-auto">Auto</option>
+                <option value="classic">Classic (4 px)</option>
+                <option value="slim">Slim (3 px)</option>
+              </select>
+            </div>
+            <p id="upload-error" class="feedback error" role="alert" hidden></p>
+          </section>
+
+          <details class="panel armor-panel" id="armor-panel">
+            <summary>
+              <span><strong>Armor preview</strong><small>Try the in-game looks</small></span>
+              <span class="armor-current"><img id="armor-icon" src="/Plushify/art/default.png" width="26" height="26" alt=""><span id="armor-name">Default</span><span class="icon i-chevron" aria-hidden="true"></span></span>
+            </summary>
+            <div class="armor-content">
+              <fieldset id="armor-options" class="armor-options" disabled>
+                <legend class="sr-only">Armor variant</legend>
+                <label><input type="radio" name="armor" value="Default" checked><span><img src="/Plushify/art/default.png" alt="">Default</span></label>
+                <label><input type="radio" name="armor" value="Iron"><span><img src="/Plushify/art/iron.png" alt="">Iron</span></label>
+                <label><input type="radio" name="armor" value="Gold"><span><img src="/Plushify/art/gold.png" alt="">Gold</span></label>
+                <label><input type="radio" name="armor" value="Diamond"><span><img src="/Plushify/art/diamond.png" alt="">Diamond</span></label>
+                <label><input type="radio" name="armor" value="Netherite"><span><img src="/Plushify/art/netherite.png" alt="">Netherite</span></label>
+                <label><input type="radio" name="armor" value="Copper"><span><img src="/Plushify/art/copper.png" alt="">Copper</span></label>
+                <label><input type="radio" name="armor" value="Chain"><span><img src="/Plushify/art/chain.png" alt="">Chain</span></label>
+              </fieldset>
+              <p class="armor-hint" id="armor-hint" aria-live="polite">Leave the Totem unnamed for the default look.</p>
+            </div>
+          </details>
+
+          <section class="panel export-panel" aria-label="Resource pack download">
+            <h2>Resource pack</h2>
+            <p>Includes your skin and all six armor styles.</p>
+            <div class="export-actions">
+              <button class="download-button" id="download" type="button" disabled>
+                <span class="icon i-download" aria-hidden="true"></span><span id="download-label">Download My Plushy</span>
+              </button>
+              <button class="tool-button action-button" id="modrinth-help" type="button" aria-haspopup="dialog">Modrinth guide</button>
+            </div>
+            <p id="export-status" class="feedback" role="status" hidden></p>
+            <div class="export-note">
+              <a class="privacy" href="/Plushify/privacy.html"><span class="icon i-lock" aria-hidden="true"></span> Processed locally</a>
+              <button class="text-button" id="share-skin" type="button" aria-haspopup="dialog" hidden>Share on GitHub</button>
+            </div>
+          </section>
+        </div>
       </div>
 
       <section class="instructions" id="how-it-works" aria-labelledby="guide-title">
-        <h2 id="guide-title">Bring your Plushy into Minecraft.</h2>
+        <h2 id="guide-title">Into the game</h2>
         <ol>
-          <li><strong>Add your skin</strong><p>Choose a Minecraft skin PNG and preview it on the Totem. Try the armor styles in the 3D viewer.</p></li>
-          <li><strong>Install the ZIP</strong><p>In Minecraft Java, open <b>Options › Resource Packs › Open Pack Folder</b>. Drop the ZIP in the folder and activate it.</p></li>
-          <li><strong>Equip your Totem</strong><p>Keep the original name for the default look. Rename it at an anvil to <b>Iron, Gold, Diamond, Netherite, Copper</b> or <b>Chain</b>.</p></li>
+          <li><strong>Pick a skin</strong><p>Upload your PNG and check the preview. Switch between Classic and Slim if needed.</p></li>
+          <li><strong>Install the pack</strong><p>In Minecraft Java, open <b>Options › Resource Packs › Open Pack Folder</b>. Drop the ZIP into that folder and activate it.</p></li>
+          <li><strong>Equip armor</strong><p>Rename your Totem at an anvil to <b>Iron, Gold, Diamond, Netherite, Copper</b> or <b>Chain</b>.</p></li>
         </ol>
       </section>
     </main>
@@ -162,15 +171,33 @@
         <li>Download your Plushy ZIP.</li>
         <li>Open your instance in the Modrinth App and select <strong>Content</strong>.</li>
         <li>Drag the downloaded ZIP into the content list.</li>
-        <li>In Minecraft, enable Plushify under <strong>Options › Resource Packs</strong>.</li>
+        <li>Enable Plushify under <strong>Options › Resource Packs</strong> in Minecraft.</li>
       </ol>
       <form method="dialog">
         <button class="tool-button action-button" type="submit" autofocus>Close</button>
       </form>
     </dialog>
 
+    <dialog class="install-guide" id="share-guide" aria-labelledby="share-title">
+      <h2 id="share-title">Share a skin publicly</h2>
+      <p>Anyone can view and download accepted skins. Share only a skin you have permission to publish.</p>
+      <ol>
+        <li>Save your skin PNG below.</li>
+        <li>Open the gallery on GitHub and fork the repository.</li>
+        <li>Upload your PNG to <strong>skins/</strong> in your fork, then open a pull request to Plushify.</li>
+      </ol>
+      <div class="dialog-actions">
+        <button class="tool-button action-button" type="button" id="save-skin">Save skin PNG</button>
+        <a class="tool-button action-button" href="https://github.com/N3tu/Plushify/tree/main/skins">Open GitHub gallery</a>
+        <form method="dialog"><button class="tool-button action-button" type="submit" autofocus>Close</button></form>
+      </div>
+    </dialog>
+
     <footer class="site-footer">
-      <div class="frame footer-inner"><span>Plushify by N3TU</span><span>Community resource pack for Minecraft Java Edition</span></div>
+      <div class="frame footer-inner">
+        <span>Plushify by N3TU</span>
+        <div><a href="/Plushify/privacy.html">Privacy</a><a href="/Plushify/license.html">Copyright &amp; license</a><a href="https://github.com/N3tu/Plushify/tree/main/skins">Skin gallery</a></div>
+      </div>
     </footer>
   </body>
 </html>
