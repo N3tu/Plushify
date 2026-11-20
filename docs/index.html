@@ -7,12 +7,13 @@
     <meta name="description" content="Turn your Minecraft skin into a custom Totem of Undying. Preview your Plushy in 3D and download a Minecraft Java resource pack.">
     <link rel="icon" href="/Plushify/art/plushify-icon.png" type="image/png" sizes="32x32">
     <title>Plushify Creator — Your Skin. Your Plushy.</title>
-    <script type="module" crossorigin src="/Plushify/assets/index-_RfDQSdE.js"></script>
-    <link rel="modulepreload" crossorigin href="/Plushify/assets/navigation-BAJkDsyO.js">
-    <link rel="modulepreload" crossorigin href="/Plushify/assets/three-core-BwcFwJuc.js">
-    <link rel="stylesheet" crossorigin href="/Plushify/assets/navigation-DgR7oPNx.css">
+    <script type="module" crossorigin src="/Plushify/assets/index-Cfqc8pAW.js"></script>
+    <link rel="modulepreload" crossorigin href="/Plushify/assets/navigation-eIeo_ieG.js">
+    <link rel="modulepreload" crossorigin href="/Plushify/assets/three-core-BALzDnCY.js">
+    <link rel="stylesheet" crossorigin href="/Plushify/assets/navigation-BBth6Q0a.css">
   </head>
   <body>
+    <canvas class="ambient-canvas" id="ambient" aria-hidden="true"></canvas>
     <a class="skip" href="#creator">Skip to creator</a>
     <header class="site-header">
       <div class="frame header-inner">
@@ -26,10 +27,14 @@
 
     <main class="frame" id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Your skin.<br><span>Your Plushy.</span></h1>
+        <h1 id="hero-title">
+          <span class="hero-line">Your skin.</span>
+          <span class="hero-line">Your Plushy.</span>
+        </h1>
         <div class="hero-copy">
           <p>Turn your Minecraft skin into your own Totem of Undying.</p>
           <p class="edition"><span class="icon i-cube" aria-hidden="true"></span> Minecraft Java Edition · 26.1–26.4</p>
+          <a class="hero-action" href="#upload-section"><span class="icon i-upload" aria-hidden="true"></span> Add your skin <span aria-hidden="true">↓</span></a>
         </div>
       </section>
 
@@ -37,20 +42,22 @@
         <section class="preview panel" id="preview" aria-label="Live 3D preview">
           <div class="preview-header">
             <h2>3D preview</h2>
-            <label class="background-picker">
-              <span class="icon i-image" aria-hidden="true"></span>
-              <span class="sr-only">Preview background</span>
-              <select id="background">
-                <option value="overworld">Overworld</option>
-                <option value="nether">Nether</option>
-                <option value="end">End</option>
-                <option value="transparent">Transparent</option>
-              </select>
-              <span class="icon i-chevron" aria-hidden="true"></span>
-            </label>
+            <fieldset class="background-picker" id="background">
+              <legend class="sr-only">Preview background</legend>
+              <label><input type="radio" name="background" value="overworld" checked><span><i class="scene-swatch overworld" aria-hidden="true"></i>Overworld</span></label>
+              <label><input type="radio" name="background" value="nether"><span><i class="scene-swatch nether" aria-hidden="true"></i>Nether</span></label>
+              <label><input type="radio" name="background" value="end"><span><i class="scene-swatch end" aria-hidden="true"></i>End</span></label>
+              <label><input type="radio" name="background" value="transparent"><span><i class="scene-swatch clear" aria-hidden="true"></i>Transparent</span></label>
+            </fieldset>
           </div>
 
           <div class="stage" id="stage" data-background="overworld" aria-busy="true">
+            <div class="scene-stack" aria-hidden="true">
+              <div class="scene-image overworld"></div>
+              <div class="scene-image nether"></div>
+              <div class="scene-image end"></div>
+              <div class="scene-mist"></div>
+            </div>
             <div class="stage-caption" id="variant-caption">DEFAULT</div>
             <canvas id="model" tabindex="0" aria-label="Interactive Plushy model" aria-describedby="preview-help"></canvas>
             <div class="stage-message" id="stage-message" role="status">
@@ -58,9 +65,9 @@
               <p id="stage-text">Loading the Plushify model…</p>
             </div>
             <p class="stage-help" id="preview-help">
-              <span class="mouse-help">Drag to rotate · Scroll to zoom</span>
-              <span class="touch-help">Drag to rotate · Pinch to zoom</span>
-              <span class="sr-only">Use arrow keys to rotate, plus or minus to zoom, and Home to reset.</span>
+              <span class="mouse-help"><span class="bounce-hint">Click to bounce · </span>Drag to rotate · Scroll to zoom</span>
+              <span class="touch-help"><span class="bounce-hint">Tap to bounce · </span>Drag to rotate · Pinch to zoom</span>
+              <span class="sr-only"><span class="bounce-hint">Press Enter to bounce. </span>Use arrow keys to rotate, plus or minus to zoom, and Home to reset.</span>
             </p>
           </div>
 
