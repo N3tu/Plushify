@@ -7,9 +7,9 @@
     <meta name="description" content="Turn your Minecraft skin into a custom Totem of Undying. Preview your Plushy in 3D and download a Minecraft Java resource pack.">
     <link rel="icon" href="/Plushify/art/plushify-icon.png" type="image/png" sizes="32x32">
     <title>Plushify Creator — Your Skin. Your Plushy.</title>
-    <script type="module" crossorigin src="/Plushify/assets/index-CF5mtIce.js"></script>
+    <script type="module" crossorigin src="/Plushify/assets/index-BJ4BEYsZ.js"></script>
     <link rel="modulepreload" crossorigin href="/Plushify/assets/three-core-BwcFwJuc.js">
-    <link rel="stylesheet" crossorigin href="/Plushify/assets/index-499x92vy.css">
+    <link rel="stylesheet" crossorigin href="/Plushify/assets/index-DhONpYTA.css">
   </head>
   <body>
     <a class="skip" href="#creator">Skip to creator</a>
@@ -85,9 +85,12 @@
           </section>
 
           <section class="export-panel" aria-label="Resource pack download">
-            <button class="download-button" id="download" type="button" disabled>
-              <span class="icon i-download" aria-hidden="true"></span><span id="download-label">Download My Plushy</span><span class="zip-label">ZIP</span>
-            </button>
+            <div class="export-actions">
+              <button class="download-button" id="download" type="button" disabled>
+                <span class="icon i-download" aria-hidden="true"></span><span id="download-label">Download My Plushy</span>
+              </button>
+              <button class="tool-button modrinth-button" id="modrinth-help" type="button" aria-haspopup="dialog">Modrinth guide</button>
+            </div>
             <p class="privacy"><span class="icon i-lock" aria-hidden="true"></span> Your skin stays in your browser. No uploads to external servers.</p>
             <p id="export-status" class="feedback" role="status" hidden></p>
           </section>
@@ -152,6 +155,19 @@
         </ol>
       </section>
     </main>
+
+    <dialog class="install-guide" id="modrinth-guide" aria-labelledby="modrinth-title">
+      <h2 id="modrinth-title">Install in Modrinth</h2>
+      <ol>
+        <li>Download your Plushy ZIP.</li>
+        <li>Open your instance in the Modrinth App and select <strong>Content</strong>.</li>
+        <li>Drag the downloaded ZIP into the content list.</li>
+        <li>In Minecraft, enable Plushify under <strong>Options › Resource Packs</strong>.</li>
+      </ol>
+      <form method="dialog">
+        <button class="tool-button action-button" type="submit" autofocus>Close</button>
+      </form>
+    </dialog>
 
     <footer class="site-footer">
       <div class="frame footer-inner"><span>Plushify by N3TU</span><span>Community resource pack for Minecraft Java Edition</span></div>
