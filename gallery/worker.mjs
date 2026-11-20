@@ -83,6 +83,20 @@ async function listSkins(db, cursor, headers) {
   return Response.json({ items, next }, { headers });
 }
 
+async function verifyUpload(token, id, env) {
+  const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    body: new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: token }),
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!response.ok) throw new Error('Turnstile is unavailable.');
+  const check = await response.json();
+  return check.success === true
+    && check.hostname === new URL(env.CREATOR_ORIGIN).hostname
+    && check.action === 'publish_skin'
+    && check.cdata === id;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -103,7 +117,7 @@ export default {
 
     if (request.method === 'OPTIONS' && collection && fromCreator) {
       headers.set('Access-Control-Allow-Methods', 'POST');
-      headers.set('Access-Control-Allow-Headers', 'Content-Type');
+      headers.set('Access-Control-Allow-Headers', 'Content-Type, X-Plushify-Verification');
       return new Response(null, { status: 204, headers });
     }
 
@@ -121,7 +135,10 @@ export default {
       }
       if (request.method !== 'POST' || !collection) return error('Method not allowed.', 405);
       if (!fromCreator) return error('Uploads must come from Plushify.', 403);
+      if (!env.TURNSTILE_SECRET_KEY) return error('Public uploads are unavailable.', 503);
       if (request.headers.get('Content-Type') !== 'application/octet-stream') return error('Unsupported skin format.', 415);
+      const token = request.headers.get('X-Plushify-Verification');
+      if (!token || token.length > 2048) return error('A valid upload verification is required.', 403);
       const ip = request.headers.get('CF-Connecting-IP') ?? 'local';
       if (!(await env.UPLOADS.limit({ key: ip })).success) {
         headers.set('Retry-After', '60');
@@ -131,6 +148,7 @@ export default {
       if (!pixels) return error('Expected a 64 × 64 skin with a visible face.', 400);
       const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', pixels));
       const id = Array.from(hash, (byte) => byte.toString(16).padStart(2, '0')).join('');
+      if (!await verifyUpload(token, id, env)) return error('Upload verification failed.', 403);
       const png = await encodePng(pixels);
       const result = await env.DB.prepare('INSERT INTO skins (id, png) VALUES (?, ?) ON CONFLICT(id) DO NOTHING').bind(id, png).run();
       return Response.json({ id }, { status: result.meta.changes ? 201 : 200, headers });
